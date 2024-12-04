@@ -1,0 +1,62 @@
+<header class="flex items-center justify-between px-4 py-6 bg-black">
+  
+  <!-- Menú -->
+  <div class="flex items-center gap-4 ml-8">
+    <!-- Menú desplegable -->
+    <button aria-label="Abrir menú" class="p-2 bg-white rounded-full shadow hover:bg-gray-200" id="menuButton">
+      ☰
+    </button>
+
+    <!-- Opciones del menú -->
+    <div id="menuOptions" class="absolute right-0 mt-2 hidden bg-white border rounded-lg shadow-lg z-20 transform scale-95 transition-all duration-300 ease-out">
+      <a href="/contacto" class="block px-4 py-2 text-black hover:bg-gray-200 rounded-t-lg">Contacta con nosotros</a>
+      <a href="/lotes" class="block px-4 py-2 text-black hover:bg-gray-200 rounded-b-lg">Lotes</a>
+    </div>
+  </div>
+  
+  <div class="flex-1 text-center">
+    <!-- Logo -->
+    <div class="inline-block bg-white h-[50px] px-4 rounded-full items-center justify-center">
+      <img src="/src/assets/logoCarniceria.png" alt="Logo" class="sticky h-[40px]">
+    </div>
+    <h1 class="text-white text-3xl font-serif">Carnicería El Viso</h1>
+  </div>
+  
+  <div class="flex items-center gap-4 mr-8">
+    <!-- Carrito -->
+    <a href="" class="flex items-center">
+      <img src="/src/assets/CarritoBlanco.png" alt="Carrito" class="w-8 h-8">
+    </a>
+  </div>
+
+  
+</header>
+
+<script>
+// Obtener el botón del menú y el contenedor de las opciones
+const menuButton = document.getElementById('menuButton');
+const menuOptions = document.getElementById('menuOptions');
+
+// Función para alternar la visibilidad del menú
+menuButton.addEventListener('click', (event) => {
+  // Prevenir la propagación del clic para evitar que se cierre inmediatamente
+  event.stopPropagation();
+  menuOptions.classList.toggle('hidden'); // Alternar visibilidad del menú
+});
+
+// Detectar clic fuera del menú
+document.addEventListener('click', (event) => {
+  // Comprobamos que el evento target sea un nodo y que no esté dentro del menú o el botón
+  const target = event.target as Node;  // Convertir event.target a tipo Node
+
+  if (
+    menuOptions && 
+    menuButton && 
+    !menuOptions.contains(target) && 
+    !menuButton.contains(target)
+  ) {
+    menuOptions.classList.add('hidden'); // Ocultar el menú si el clic fue fuera
+  }
+});
+
+</script>
