@@ -17,7 +17,7 @@
   <div class="flex-1 text-center">
     <!-- Logo -->
     <div class="inline-block bg-white h-[50px] px-4 rounded-full items-center justify-center">
-      <img src="/src/assets/logoCarniceria.png" alt="Logo" class="sticky h-[40px]">
+      <img src="/assets/logoCarniceria.png" alt="Logo" class="sticky h-[40px]">
     </div>
     <h1 class="text-white text-3xl font-serif">Carnicería El Viso</h1>
   </div>
@@ -31,32 +31,3 @@
 
   
 </header>
-
-<script>
-// Obtener el botón del menú y el contenedor de las opciones
-const menuButton = document.getElementById('menuButton');
-const menuOptions = document.getElementById('menuOptions');
-
-// Función para alternar la visibilidad del menú
-menuButton.addEventListener('click', (event) => {
-  // Prevenir la propagación del clic para evitar que se cierre inmediatamente
-  event.stopPropagation();
-  menuOptions.classList.toggle('hidden'); // Alternar visibilidad del menú
-});
-
-// Detectar clic fuera del menú
-document.addEventListener('click', (event) => {
-  // Comprobamos que el evento target sea un nodo y que no esté dentro del menú o el botón
-  const target = event.target as Node;  // Convertir event.target a tipo Node
-
-  if (
-    menuOptions && 
-    menuButton && 
-    !menuOptions.contains(target) && 
-    !menuButton.contains(target)
-  ) {
-    menuOptions.classList.add('hidden'); // Ocultar el menú si el clic fue fuera
-  }
-});
-
-</script>
