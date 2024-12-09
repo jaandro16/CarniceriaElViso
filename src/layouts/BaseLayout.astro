@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/global/Footer.astro";
 import Header from "../components/global/Header.astro";
 import Analytics from '@vercel/analytics/astro'
+import Navigation from "../components/global/Navigation.astro";
 ---
 
 <html lang="en" class="flex sm:grid">
@@ -12,6 +13,7 @@ import Analytics from '@vercel/analytics/astro'
   <Header/>
   <body class="bg-charcoal-500">
     <slot />
+    <Navigation/>
     <Footer/>
   </body>
 </html>
