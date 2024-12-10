@@ -201,27 +201,3 @@
     </div>
   </div>
 </main>
-
-<script>
-  // Seleccionamos el botón y el contenedor principal
-  const toggleButton = document.getElementById('toggleButton');
-  const mainContent = document.getElementById('main-content');
-
-  // Verificar que los elementos existen
-  if (toggleButton && mainContent) {
-    // Asegurar que el main esté visible por defecto
-    mainContent.style.display = 'block';
-
-    // Añadir el evento de clic para alternar la visibilidad
-    toggleButton.addEventListener('click', () => {
-      // Alternar la visibilidad del contenido main
-      if (mainContent.style.display === 'none') {
-        mainContent.style.display = 'block'; // Mostrar
-      } else {
-        mainContent.style.display = 'none';  // Ocultar
-      }
-    });
-  } else {
-    console.error("No se pudieron encontrar los elementos 'toggleButton' o 'mainContent'.");
-  }
-</script>
