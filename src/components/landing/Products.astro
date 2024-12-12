@@ -232,11 +232,18 @@
         </div>
 
               <!-- Botón de "Ver más" solo en móvil -->
-        <div class="flex flex-col gap-3 py-12 sm:flex-row sm:justify-center">
-          <button id="verMasBtn" class="sm:hidden px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
-            Ver más lotes
-          </button>
-        </div>
+              <div class="flex flex-col gap-3 py-12 sm:flex-row sm:justify-center">
+                <!-- Botón "Ver más" -->
+                <button id="verMasBtn" class="sm:hidden items-center h-12 justify-center rounded-full font-semibold duration-200 focus:outline-none px-6 py-3 text-center w-full sm:w-auto border-2 hover:bg-transparent border-black bg-black focus-visible:outline-black focus-visible:ring-black hover:border-black hover:text-black text-white">
+                  Ver más lotes
+                </button>
+                
+                <!-- Botón "Ver menos" -->
+                <button id="verMenosBtn" class="sm:hidden hidden items-center h-12 justify-center rounded-full font-semibold duration-200 focus:outline-none px-6 py-3 text-center w-full sm:w-auto border-2 hover:bg-transparent border-black bg-black focus-visible:outline-black focus-visible:ring-black hover:border-black hover:text-black text-white">
+                  Ver menos lotes
+                </button>
+              </div>
+              
       </div>
   </div>
 </main>
@@ -244,27 +251,45 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const verMasBtn = document.querySelector('#verMasBtn');
-    
-    // Cards to reveal after the first click
+    const verMenosBtn = document.querySelector('#verMenosBtn');
+
+    // Selección de los lotes
     const lotes4a6 = document.querySelectorAll('.lote-4, .lote-5, .lote-6');
     const lotes7a10 = document.querySelectorAll('.lote-7, .lote-8, .lote-9, .lote-10');
 
-    let step = 0;  // Variable to track the steps of visibility
+    let step = 0; // Estado inicial
 
-    if (verMasBtn) {
-      verMasBtn.addEventListener('click', () => {
-        if (step === 0) {
-          // Mostrar lotes 4 a 6
-          lotes4a6.forEach(card => card.classList.remove('hidden'));
-          verMasBtn.textContent = 'Ver más lotes';
-          step = 1;  // Avanzar al siguiente paso
-        } else if (step === 1) {
-          // Mostrar lotes 7 a 10
-          lotes7a10.forEach(card => card.classList.remove('hidden'));
-          verMasBtn.remove();  // Eliminar el botón después de mostrar todos los lotes
-        }
-      });
-    }
+    // Asegurar estado inicial de los botones
+    if (verMasBtn) verMasBtn.classList.remove('hidden');
+    if (verMenosBtn) verMenosBtn.classList.add('hidden');
+
+    // Lógica para el botón "Ver más"
+    verMasBtn?.addEventListener('click', () => {
+      if (step === 0) {
+        // Mostrar lotes 4 a 6
+        lotes4a6.forEach(card => card.classList.remove('hidden'));
+        step = 1;
+      } else if (step === 1) {
+        // Mostrar lotes 7 a 10
+        lotes7a10.forEach(card => card.classList.remove('hidden'));
+        step = 2;
+
+        // Ocultar "Ver más" y mostrar "Ver menos"
+        verMasBtn.classList.add('hidden');
+        verMenosBtn?.classList.remove('hidden');
+      }
+    });
+
+    // Lógica para el botón "Ver menos"
+    verMenosBtn?.addEventListener('click', () => {
+      // Ocultar todos los lotes
+      lotes4a6.forEach(card => card.classList.add('hidden'));
+      lotes7a10.forEach(card => card.classList.add('hidden'));
+
+      // Reiniciar estado
+      step = 0;
+      verMenosBtn.classList.add('hidden');
+      verMasBtn?.classList.remove('hidden');
+    });
   });
 </script>
-
