@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from "../../components/global/Header.astro";
+import Subheader from "../../components/global/Subheader.astro";
+import Footer from "../../components/global/Footer.astro";
+import Lote from '../../components/global/Lote.astro';
+
+const lote1 = {
+  title: "Lote 1 - Pollo",
+  price: "14,99",
+  description: "Este lote incluye una selección de productos perfectos para celebraciones familiares.",
+  itemsAvailable: 10,
+  imageUrl: "/assets/MuslitosDePollo.png",
+  features: [
+    "1kg Alitas de Pollo",
+    "1kg Contramuslos",
+    "1kg Muslitos de Pollo"
+  ]
+};
+---
+
+<BaseLayout title={lote1.title}>
+  <Header />
+  <Subheader
+  title="Lote 1 Pollo"
+  backgroundImage="/assets/imagen_subheader.png"/>
+  <Lote {...lote1} />
+  <Footer />
+</BaseLayout>
