@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from "../../components/global/Header.astro";
+import Subheader from "../../components/global/Subheader.astro";
+import Footer from "../../components/global/Footer.astro";
+import Lote from '../../components/global/Lote.astro';
+
+const lote6 = {
+  title: "Lote 6 - Barbacoa",
+  price: "35",
+  description: "Este lote incluye una selección de productos perfectos para celebraciones familiares.",
+  itemsAvailable: 10,
+  imageUrl: "https://comercialnovafrigo.com/wp-content/uploads/2020/02/moruno-600x600.png",
+  features: [
+    "1kg Pincho de Cerdo",
+    "1kg Chorizo Casero",
+    "1kg Morcilla Cebolla",
+    "1kg Panceta Fresca",
+    "1kg Butifarra Blanca"
+  ]
+};
+---
+
+<BaseLayout title={lote6.title}>
+  <Header />
+  <Subheader
+  title="Lote 6 Barbacoa"
+  backgroundImage="/assets/imagen_subheader.png"/>
+  <Lote {...lote6} />
+  <Footer />
+</BaseLayout>

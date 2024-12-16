@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from "../../components/global/Header.astro";
+import Subheader from "../../components/global/Subheader.astro";
+import Footer from "../../components/global/Footer.astro";
+import Lote from '../../components/global/Lote.astro';
+
+const lote9 = {
+  title: "Lote 9 - Barbacoa 7kg",
+  price: "49",
+  description: "Este lote incluye una selección de productos perfectos para celebraciones familiares.",
+  itemsAvailable: 10,
+  imageUrl: "https://i.pinimg.com/736x/8f/80/df/8f80df7a74e83e67015c316543bd4841.jpg",
+  features: [
+    "1kg Chuletas de Aguja",
+    "1kg Chorizo Casero",
+    "1kg Pinchgo de Cerdo",
+    "1kg Butifarra Blanca",
+    "1kg Morcilla Cebolla",
+    "1kg Chistorra Casera",
+    "1kg Panceta Fresca"
+  ]
+};
+---
+
+<BaseLayout title={lote9.title}>
+  <Header />
+  <Subheader
+  title="Lote 9 Barbacoa 7kg"
+  backgroundImage="/assets/imagen_subheader.png"/>
+  <Lote {...lote9} />
+  <Footer />
+</BaseLayout>

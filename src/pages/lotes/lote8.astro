@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from "../../components/global/Header.astro";
+import Subheader from "../../components/global/Subheader.astro";
+import Footer from "../../components/global/Footer.astro";
+import Lote from '../../components/global/Lote.astro';
+
+const lote8 = {
+  title: "Lote 8 - Familiar 10kg",
+  price: "64.99",
+  description: "Este lote incluye una selección de productos perfectos para celebraciones familiares.",
+  itemsAvailable: 10,
+  imageUrl: "https://i.pinimg.com/736x/03/37/04/033704a99bd13c843cad1c786c4f17df.jpg",
+  features: [
+    "1kg Hamburguesas",
+    "1kg Filetes de Ternera",
+    "1kg Falda Ternera",
+    "1kg Traseros Pollo",
+    "1kg Muslos de Pollo",
+    "1kg Chuletas de Aguja",
+    "1kg Picada Mixta",
+    "1kg Maagro de Cerdo",
+    "1kg Lomo Adobo/Ajillo",
+    "1kg Costillas Adobadas"
+  ]
+};
+---
+
+<BaseLayout title={lote8.title}>
+  <Header />
+  <Subheader
+  title="Lote 8 Familiar 10kg"
+  backgroundImage="/assets/imagen_subheader.png"/>
+  <Lote {...lote8} />
+  <Footer />
+</BaseLayout>

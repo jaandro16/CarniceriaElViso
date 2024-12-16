@@ -1,10 +1,9 @@
 ---
 const { title, price, description, itemsAvailable, imageUrl, features } = Astro.props;
 ---
-
 <main class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row gap-8 items-center">
   <!-- Imagen del lote -->
-  <div class="flex-shrink-0 relative">
+  <div class="flex-shrink-0 relative mt-10 md:mt-0">
     <img
       src={imageUrl}
       alt={title}

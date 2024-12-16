@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from "../../components/global/Header.astro";
+import Subheader from "../../components/global/Subheader.astro";
+import Footer from "../../components/global/Footer.astro";
+import Lote from '../../components/global/Lote.astro';
+
+const lote7 = {
+  title: "Lote 7 - Espacial Pollo",
+  price: "63",
+  description: "Este lote incluye una selección de productos perfectos para celebraciones familiares.",
+  itemsAvailable: 10,
+  imageUrl: "https://img.freepik.com/fotos-premium/arreglo-piezas-carne-pollo-crudo-fresco_89816-16254.jpg",
+  features: [
+    "2kg Filetes de Pollo",
+    "2kg Traseros de Pollo",
+    "2kg Alitas de Pollo",
+    "2kg Muslos de Pollo",
+    "1kg Burger Pollo o Mixtas",
+    "1kg Filetes de Ternera",
+    "1kg Guisar Ternera"
+  ]
+};
+---
+
+<BaseLayout title={lote7.title}>
+  <Header />
+  <Subheader
+  title="Lote 7 Especial Pollo"
+  backgroundImage="/assets/imagen_subheader.png"/>
+  <Lote {...lote7} />
+  <Footer />
+</BaseLayout>

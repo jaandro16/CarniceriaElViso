@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from "../../components/global/Header.astro";
+import Subheader from "../../components/global/Subheader.astro";
+import Footer from "../../components/global/Footer.astro";
+import Lote from '../../components/global/Lote.astro';
+
+const lote1 = {
+  title: "Lote 10 - Barbacoa 10kg",
+  price: "63",
+  description: "Este lote incluye una selección de productos perfectos para celebraciones familiares.",
+  itemsAvailable: 10,
+  imageUrl: "https://i.pinimg.com/736x/2d/0f/20/2d0f20258551f3ce1db4efb8e94f283f.jpg",
+  features: [
+    "1kg Morcilla Cebolla",
+    "1kg Chorizo Casero",
+    "1kg Pincho de Cerdo",
+    "1kg Butifarra",
+    "1kg Chistorra",
+    "1kg Panceta Fresca",
+    "1kg Chuletas de Aguja",
+    "1kg Churrasco",
+    "1kg Alas Adobo",
+    "1kg Costillas Adobo"
+  ]
+};
+---
+
+<BaseLayout title={lote1.title}>
+  <Header />
+  <Subheader
+  title="Lote 10 Barbacoa 10kg"
+  backgroundImage="/assets/imagen_subheader.png"/>
+  <Lote {...lote1} />
+  <Footer />
+</BaseLayout>
