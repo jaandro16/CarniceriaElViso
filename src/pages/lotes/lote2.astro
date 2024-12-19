@@ -9,7 +9,6 @@ const lote2 = {
   title: "Lote 2 - Pollo",
   price: "14,99",
   description: "Este lote incluye una selección de productos perfectos para celebraciones familiares.",
-  itemsAvailable: 10,
   imageUrl: "https://i.pinimg.com/736x/1c/22/6e/1c226e7c2996352ea64876eea982a5a5.jpg",
   features: [
     "1kg Filete de Pollo",
@@ -24,6 +23,6 @@ const lote2 = {
   <Subheader
   title="Lote 2 Pollo"
   backgroundImage="/assets/imagen_subheader.png"/>
-  <Lote {...lote2} />
+  <Lote {...lote2} imgClass="max-h-77 md:max-h-130"/>
   <Footer />
 </BaseLayout>

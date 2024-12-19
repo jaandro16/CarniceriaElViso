@@ -1,5 +1,5 @@
 ---
-const { title, price, description, itemsAvailable, imageUrl, features, imgClass  } = Astro.props;
+const { title, price, description, imageUrl, features } = Astro.props;
 import WhatsAppButton from "./WhatsAppButton.astro";
 ---
 <main class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row gap-8 items-center">
@@ -8,7 +8,7 @@ import WhatsAppButton from "./WhatsAppButton.astro";
     <img
       src={imageUrl}
       alt={title}
-      class={`rounded-lg shadow-lg w-full md:w-[450px] object-cover ${imgClass}`}
+      class="rounded-lg shadow-lg w-full md:w-[450px] object-cover"
     />
   </div>
 
@@ -20,11 +20,6 @@ import WhatsAppButton from "./WhatsAppButton.astro";
 
     <!-- Precio -->
     <p class="text-2xl font-semibold text-[#964141]">{price} €</p>
-
-    <!-- Disponibilidad -->
-    <p class="text-lg font-bold text-yellow-600">
-      {itemsAvailable} <span class="text-gray-700">Disponible</span>
-    </p>
 
     <!-- Divisor -->
     <div class="border-t border-gray-300 w-full my-4"></div>
