@@ -2,7 +2,14 @@
 const { title, price, description, itemsAvailable, imageUrl, features, imgClass  } = Astro.props;
 import WhatsAppButton from "./WhatsAppButton.astro";
 ---
-<main class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row gap-8 items-center mt-20 mb-20">
+<div class="relative mx-auto px-8 max-w-7xl py-6 mb-3 md:px-12">
+  <div class="mx-auto text-center ">
+    <p class="text-black font-serif">
+      *Los lotes no podrán ser modificados por normativa de la empresa*
+    </p>
+  </div>
+</div>
+<main class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row gap-8 items-center mt-5 mb-20">
   <!-- Imagen del lote -->
   <div class="flex-shrink-0 relative mt-10 md:mt-0 px-3">
     <img
