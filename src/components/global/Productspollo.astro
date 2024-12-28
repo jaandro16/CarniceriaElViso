@@ -1,0 +1,76 @@
+<main class="bg-white p-6">
+  <!-- Navegación superior y filtro -->
+  <div class="flex justify-between items-center mb-6">
+    <nav class="text-sm text-gray-600 flex items-center gap-1">
+      <a href="#" class="hover:text-gray-900">Inicio</a>
+      <span>&gt;</span>
+      <a href="#" class="hover:text-gray-900">Tienda</a>
+      <span>&gt;</span>
+      <span class="text-gray-900">Pollería</span>
+    </nav>
+    <div class="flex items-center gap-4">
+      <p class="text-gray-600 text-sm">Mostrando todos los resultados 14</p>
+      <select class="border rounded-md text-sm px-3 py-1">
+        <option>Orden por defecto</option>
+        <option>Precio: menor a mayor</option>
+        <option>Precio: mayor a menor</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="flex">
+    <!-- Sidebar de categorías -->
+    <aside class="w-1/4 pr-4">
+      <h2 class="font-bold text-lg mb-4">Categorías</h2>
+      <ul class="space-y-3 text-sm">
+        <li class="flex justify-between items-center">
+          <label class="flex items-center">
+            <input type="radio" name="category" class="mr-2"> Superofertas
+          </label>
+          <span>(5)</span>
+        </li>
+        <li class="flex justify-between items-center">
+          <label class="flex items-center">
+            <input type="radio" name="category" class="mr-2"> Especial Navidad
+          </label>
+          <span>(10)</span>
+        </li>
+        <!-- Agregar más categorías si es necesario -->
+      </ul>
+
+      <div class="mt-6">
+        <h2 class="font-bold text-lg mb-4">Filtrar por precio</h2>
+        <div>
+          <input type="range" min="0" max="20" class="w-full accent-green-500">
+          <p class="text-sm text-gray-600 mt-2">Precio: <span class="font-bold">0,00€</span> — <span class="font-bold">20,00€</span></p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Grid de productos -->
+    <section class="w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Producto 1 -->
+      <article class="bg-white shadow-md rounded-md p-4 text-center">
+        <img src="https://via.placeholder.com/150" alt="Alitas de Pollo" class="mb-4 mx-auto rounded-md">
+        <h3 class="text-sm font-bold mb-1">Alitas de Pollo (4,50€/Kg)</h3>
+        <p class="text-sm text-green-600 font-bold">Bandeja 1/2 Kg: 2,25€</p>
+        <button class="mt-4 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
+          </svg>
+        </button>
+      </article>
+      <!-- Repetir estructura para más productos -->
+      <article class="bg-white shadow-md rounded-md p-4 text-center">
+        <img src="https://via.placeholder.com/150" alt="Cinta Adobada" class="mb-4 mx-auto rounded-md">
+        <h3 class="text-sm font-bold mb-1">Cinta Adobada (8,99€/Kg)</h3>
+        <p class="text-sm text-green-600 font-bold">8,99€</p>
+        <button class="mt-4 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
+          </svg>
+        </button>
+      </article>
+    </section>
+  </div>
+</main>
