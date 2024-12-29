@@ -277,8 +277,6 @@
 </main>
 
 <script>
-
-
   document.addEventListener("DOMContentLoaded", () => {
     const verMasBtn = document.getElementById("verMasBtn");
     const verMenosBtn = document.getElementById("verMenosBtn");
@@ -312,15 +310,6 @@
       });
 
       verMenosBtn.addEventListener("click", () => {
-        // Ocultar todos los lotes
-        lotes4a6.forEach(card => card.classList.add('hidden'));
-        lotes7a10.forEach(card => card.classList.add('hidden'));
-
-        // Reiniciar estado
-        step = 0;
-        verMenosBtn.classList.add('hidden');
-        verMasBtn?.classList.remove('hidden');
-
         // Efecto de auto scroll-up hacia #Inicio
         const inicio = document.getElementById("Inicio");
         if (inicio) {
@@ -328,11 +317,24 @@
             behavior: "smooth",
             block: "start",
           });
+
+          // Esperar que la transición de scroll haya terminado antes de ocultar los lotes
+          setTimeout(() => {
+            // Ocultar todos los lotes después del desplazamiento
+            lotes4a6.forEach(card => card.classList.add('hidden'));
+            lotes7a10.forEach(card => card.classList.add('hidden'));
+
+            // Reiniciar estado
+            step = 0;
+            verMenosBtn.classList.add('hidden');
+            verMasBtn?.classList.remove('hidden');
+          }, 600); // Ajusta el tiempo de espera a la duración de la animación de desplazamiento
         }
       });
     }
   });
 </script>
+
 
 
 <!-- Por si acaso
