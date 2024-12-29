@@ -3,7 +3,6 @@
 const phoneNumber = "34629444479"; // Número de teléfono en formato internacional (sin '+' ni espacios)
 const message = "Hola Mario, me gustaría hacer un pedido."; // Mensaje predefinido
 const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-import Analytics from '@vercel/analytics/astro'
 ---
 
 <a
@@ -37,4 +36,3 @@ import Analytics from '@vercel/analytics/astro'
   <!-- Texto del botón -->
   <span class="hidden sm:inline text-lg font-semibold">Pídelo por WhatsApp</span>
 </a>
-<Analytics />

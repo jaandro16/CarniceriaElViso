@@ -1,11 +1,12 @@
 <main>
   <div class="bg-white min-h-screen p-8" id="InicioOfertas">
-    <!-- Título estilizado -->
+    <!-- Imagen en lugar del título -->
     <div class="text-center mt-6 mb-12">
-      <h2 class="text-4xl font-extrabold font-serif text-[#964141] tracking-wide">
-        Nuestras ofertas
-      </h2>
-      
+      <img
+        src="/assets/CarteldeOfertas.png" 
+        alt="Nuestras Ofertas" 
+        class="mx-auto w-110 h-auto"
+      />
     </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto max-w-screen-xl">
         <!-- Card 1 -->
@@ -125,7 +126,7 @@
                 </button>
                 
                 <!-- Botón "Ver menos" -->
-                <button id="verMenosBoton" onclick="window.location.href='#InicioOfertas'" class="sm:hidden hidden items-center h-12 justify-center rounded-full font-semibold duration-200 focus:outline-none px-6 py-3 text-center w-full sm:w-auto border-2 hover:bg-transparent border-black bg-black focus-visible:outline-black focus-visible:ring-black hover:border-black hover:text-black text-white">
+                <button id="verMenosBoton" class="sm:hidden hidden items-center h-12 justify-center rounded-full font-semibold duration-200 focus:outline-none px-6 py-3 text-center w-full sm:w-auto border-2 hover:bg-transparent border-black bg-black focus-visible:outline-black focus-visible:ring-black hover:border-black hover:text-black text-white">
                   Ver menos
                 </button>
               </div>
@@ -164,6 +165,15 @@
         step = 0;
         verMenosBoton.classList.add('hidden');
         verMasBoton?.classList.remove('hidden');
+
+        // Efecto de auto scroll-up hacia #Inicio
+        const inicio = document.getElementById("InicioOfertas");
+        if (inicio) {
+          inicio.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
     });
   });
 </script>

@@ -266,7 +266,8 @@
                 </button>
                 
                 <!-- Botón "Ver menos" -->
-                <button id="verMenosBtn" onclick="window.location.href='#Inicio'" class="sm:hidden hidden items-center h-12 justify-center rounded-full font-semibold duration-200 focus:outline-none px-6 py-3 text-center w-full sm:w-auto border-2 hover:bg-transparent border-black bg-black focus-visible:outline-black focus-visible:ring-black hover:border-black hover:text-black text-white">
+                <button id="verMenosBtn" 
+                class="sm:hidden hidden items-center h-12 justify-center rounded-full font-semibold duration-200 focus:outline-none px-6 py-3 text-center w-full sm:w-auto border-2 hover:bg-transparent border-black bg-black focus-visible:outline-black focus-visible:ring-black hover:border-black hover:text-black text-white">
                   Ver menos
                 </button>
               </div>
@@ -276,6 +277,65 @@
 </main>
 
 <script>
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const verMasBtn = document.getElementById("verMasBtn");
+    const verMenosBtn = document.getElementById("verMenosBtn");
+    // Selección de los lotes
+    const lotes4a6 = document.querySelectorAll('.lote-4, .lote-5, .lote-6');
+    const lotes7a10 = document.querySelectorAll('.lote-7, .lote-8, .lote-9, .lote-10');
+
+    let step = 0; // Estado inicial
+
+    // Asegurar estado inicial de los botones
+    if (verMasBtn) verMasBtn.classList.remove('hidden');
+    if (verMenosBtn) verMenosBtn.classList.add('hidden');
+
+    // Comprobar si los botones y los lotes existen
+    if (verMasBtn && verMenosBtn && lotes4a6 && lotes7a10) {
+      // Lógica para el botón "Ver más"
+      verMasBtn?.addEventListener('click', () => {
+        if (step === 0) {
+          // Mostrar lotes 4 a 6
+          lotes4a6.forEach(card => card.classList.remove('hidden'));
+          step = 1;
+        } else if (step === 1) {
+          // Mostrar lotes 7 a 10
+          lotes7a10.forEach(card => card.classList.remove('hidden'));
+          step = 2;
+
+          // Ocultar "Ver más" y mostrar "Ver menos"
+          verMasBtn.classList.add('hidden');
+          verMenosBtn?.classList.remove('hidden');
+        }
+      });
+
+      verMenosBtn.addEventListener("click", () => {
+        // Ocultar todos los lotes
+        lotes4a6.forEach(card => card.classList.add('hidden'));
+        lotes7a10.forEach(card => card.classList.add('hidden'));
+
+        // Reiniciar estado
+        step = 0;
+        verMenosBtn.classList.add('hidden');
+        verMasBtn?.classList.remove('hidden');
+
+        // Efecto de auto scroll-up hacia #Inicio
+        const inicio = document.getElementById("Inicio");
+        if (inicio) {
+          inicio.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    }
+  });
+</script>
+
+
+<!-- Por si acaso
   document.addEventListener('DOMContentLoaded', () => {
     const verMasBtn = document.querySelector('#verMasBtn');
     const verMenosBtn = document.querySelector('#verMenosBtn');
@@ -319,5 +379,4 @@
       verMasBtn?.classList.remove('hidden');
       
     });
-  });
-</script>
+  }); -->
