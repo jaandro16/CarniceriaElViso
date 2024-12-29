@@ -4,6 +4,7 @@ import Header from "../../components/global/Header.astro";
 import Subheader from "../../components/global/Subheader.astro";
 import Footer from "../../components/global/Footer.astro";
 import Lote from '../../components/global/Lote.astro';
+import Analytics from '@vercel/analytics/astro'
 
 const lote2 = {
   title: "Lote 2 - Pollo",
@@ -25,4 +26,5 @@ const lote2 = {
   backgroundImage="/assets/imagen_subheader.png"/>
   <Lote {...lote2} imgClass="md:max-h-130"/>
   <Footer />
+  <Analytics />
 </BaseLayout>

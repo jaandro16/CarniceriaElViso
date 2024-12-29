@@ -4,6 +4,7 @@ import Footer from "../components/global/Footer.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Subheader from "../components/global/Subheader.astro";
 import Seccionizqcontacto from "../components/global/seccionizqcontacto.astro";
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <BaseLayout>
@@ -13,4 +14,5 @@ import Seccionizqcontacto from "../components/global/seccionizqcontacto.astro";
   backgroundImage="/assets/imagen_subheader.png"/>
   <Seccionizqcontacto />
   <Footer />
+  <Analytics />
 </BaseLayout>
